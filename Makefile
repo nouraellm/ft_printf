@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+         #
+#    By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:12:50 by nel-alla          #+#    #+#              #
-#    Updated: 2020/01/19 22:53:34 by nel-alla         ###   ########.fr        #
+#    Updated: 2020/01/21 08:27:28 by nel-alla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -68,7 +68,7 @@ $(OBJECTS): $(SRCS) $(INCLUDES)
 	@ar rcs $(NAME) $(OBJECTS)
 
 clean:
-	rm -rf $(OBJECTS) objects
+	rm -rf $(OBJECTS)
 	
 fclean: clean
 	rm -rf $(NAME)
