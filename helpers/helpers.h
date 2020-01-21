@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   helpers.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:03:14 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 21:13:58 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/20 00:37:38 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ char		*ft_str_tolower(char *str);
 char		*ft_strdup(const char *s1);
 size_t		ft_strlen(const char *str);
 int			ft_putsp(char *str, int precision);
+char		*ft_u_itoa(unsigned int n);
 char		*ft_utl_base(unsigned long long number, int base);
 
 #endif

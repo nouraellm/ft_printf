@@ -6,7 +6,7 @@
 #    By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/01/17 08:12:50 by nel-alla          #+#    #+#              #
-#    Updated: 2020/01/17 20:53:56 by nel-alla         ###   ########.fr        #
+#    Updated: 2020/01/19 22:53:34 by nel-alla         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,7 @@ SRCS = 	ft_printf.c \
 		srcs/ft_handle.c \
 		helpers/ft_isdigit.c \
 		helpers/ft_itoa.c \
+		helpers/ft_u_itoa.c \
 		helpers/ft_putchar.c \
 		helpers/ft_putsp.c \
 		helpers/ft_str_tolower.c \
@@ -46,6 +47,7 @@ OBJECTS = ft_printf.o \
 		ft_handle.o \
 		ft_isdigit.o \
 		ft_itoa.o \
+		ft_u_itoa.o \
 		ft_putchar.o \
 		ft_putsp.o \
 		ft_str_tolower.o \

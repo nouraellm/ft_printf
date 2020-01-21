@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_int.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 04:44:00 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 08:28:38 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 04:52:30 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ static int	ft_put_int(char *str, int num, t_flags flags)
 	count = 0;
 	if (flags.minus == 1)
 		count += ft_input(str, num, flags);
-	if (flags.dot && (size_t)flags.dot < ft_strlen(str))
+	if (flags.dot >= 0 && (size_t)flags.dot < ft_strlen(str))
 		flags.dot = ft_strlen(str);
 	if (flags.dot >= 0)
 	{
@@ -59,9 +59,9 @@ int			ft_handle_int(int i, t_flags flags)
 		count += ft_handle_width(flags.width, 0, 0);
 		return (count);
 	}
-	if ((flags.dot >= 0 || flags.zero == 1) && i < 0)
+	if (i < 0 && (flags.dot >= 0 || flags.zero >= 1))
 	{
-		if (flags.dot == -1 && flags.zero == 1)
+		if (flags.dot <= -1 && flags.zero == 1)
 			ft_putsp("-", 1);
 		i *= -1;
 		flags.zero = 1;

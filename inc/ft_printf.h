@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:07:55 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 20:29:35 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/20 01:27:45 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ typedef struct	s_flags
 	int		zero;
 	int		minus;
 	int		type;
-	int		printed;
 	int		dot;
 }				t_flags;
 

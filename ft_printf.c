@@ -3,16 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:12:43 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 21:11:53 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 04:46:53 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "inc/ft_printf.h"
 
-t_flags			ft_initialize(void)
+static t_flags			ft_initialize(void)
 {
 	t_flags	flags;
 
@@ -25,7 +25,8 @@ t_flags			ft_initialize(void)
 	return (flags);
 }
 
-static int		ft_parse(const char *str, int i, t_flags *flags, va_list args)
+static int				ft_parse(const char *str, int i,
+t_flags *flags, va_list args)
 {
 	while (str[i])
 	{
@@ -34,14 +35,14 @@ static int		ft_parse(const char *str, int i, t_flags *flags, va_list args)
 			break ;
 		if (str[i] == '0' && flags->width == 0 && flags->minus == 0)
 			flags->zero = 1;
-		if (str[i] == '.')
-			i = ft_dot_flag(str, i, flags, args);
 		if (str[i] == '*')
 			*flags = ft_width_flag(args, *flags);
-		if (ft_isdigit(str[i]))
-			*flags = ft_digit_flag(str[i], *flags);
+		if (str[i] == '.')
+			i = ft_dot_flag(str, i, flags, args);
 		if (str[i] == '-')
 			*flags = ft_minus_flag(*flags);
+		if (ft_isdigit(str[i]))
+			*flags = ft_digit_flag(str[i], *flags);
 		if (ft_isconversion(str[i]))
 		{
 			flags->type = str[i];
@@ -52,7 +53,7 @@ static int		ft_parse(const char *str, int i, t_flags *flags, va_list args)
 	return (i);
 }
 
-static int		ft_handle_input(const char *str, va_list args)
+static int				ft_handle_input(const char *str, va_list args)
 {
 	int		i;
 	int		count;
@@ -60,11 +61,13 @@ static int		ft_handle_input(const char *str, va_list args)
 
 	i = 0;
 	count = 0;
-	while (1)
+	while (!0)
 	{
 		flags = ft_initialize();
 		if (!str[i])
 			break ;
+		else if (str[i] != '%')
+			count += ft_putchar(str[i]);
 		else if (str[i] == '%' && str[i + 1])
 		{
 			i = ft_parse(str, ++i, &flags, args);
@@ -73,14 +76,12 @@ static int		ft_handle_input(const char *str, va_list args)
 			else if (str[i])
 				count += ft_putchar(str[i]);
 		}
-		else if (str[i] != '%')
-			count += ft_putchar(str[i]);
 		i++;
 	}
 	return (count);
 }
 
-int				ft_printf(const char *fmt, ...)
+int						ft_printf(const char *fmt, ...)
 {
 	va_list		args;
 	const char	*str;

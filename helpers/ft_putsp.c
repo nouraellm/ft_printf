@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putsp.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:08:39 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 08:16:46 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/20 00:41:46 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,13 @@
 
 int	ft_putsp(char *str, int precision)
 {
-	int count;
+	int i;
 
-	count = 0;
-	while (str[count] && count < precision)
+	i = 0;
+	while (str[i] && i < precision)
 	{
-		ft_putchar(str[count]);
-		count++;
+		ft_putchar(str[i]);
+		i++;
 	}
-	return (count);
+	return (i);
 }

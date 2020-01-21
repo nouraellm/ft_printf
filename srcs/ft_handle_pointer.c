@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_pointer.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 04:10:47 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 20:18:30 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 05:55:52 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,15 @@ int			ft_handle_pointer(unsigned long long num, t_flags flags)
 	char	*p;
 
 	count = 0;
-	if (flags.dot == 0 && num == 0)
+	if (flags.dot == 0 && !num)
 	{
-		count += ft_putsp("2x", 2);
-		return (count += ft_handle_width(flags.width, 0, 1));
+		if (flags.width >= 0 && flags.minus == 0)
+			(((count += ft_handle_width(flags.width - 2, 0, 0))
+			|| 1) && ((count += ft_putsp("0x", 2)) || 1));
+		else
+			(((count += ft_putsp("0x", 2)) || 1) &&
+			((count += ft_handle_width(flags.width - 2, 0, 0)) || 1));
+		return (count);
 	}
 	p = ft_utl_base(num, 16);
 	p = ft_str_tolower(p);

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_handle_uint.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: nel-alla <nel-alla@student.42.fr>          +#+  +:+       +#+        */
+/*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 00:51:20 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/17 20:21:51 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/20 01:33:16 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ int			ft_handle_uint(unsigned int number, t_flags flags)
 		count += ft_handle_width(flags.width, 0, 0);
 		return (count);
 	}
-	u_num = ft_itoa(number);
+	u_num = ft_u_itoa(number);
 	count = ft_put_uint(u_num, flags);
 	free(u_num);
 	return (count);

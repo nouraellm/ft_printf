@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*   ft_u_itoa.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 06:10:48 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/20 00:36:13 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/20 00:37:54 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		ft_intlen(long n)
 {
-	size_t	length;
+	size_t 	length;
 	int		neg;
 
 	length = 0;
@@ -60,7 +60,7 @@ static char		*ft_generate(char *nc, long num, int length, int neg)
 	return (nc);
 }
 
-char			*ft_itoa(int n)
+char			*ft_u_itoa(unsigned int n)
 {
 	int		length;
 	char	*nc;

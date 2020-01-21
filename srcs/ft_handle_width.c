@@ -6,7 +6,7 @@
 /*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:53:11 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/15 22:55:51 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 05:10:40 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ int	ft_handle_width(int width, int minus, int zero)
 	int count;
 
 	count = 0;
-	while (width - minus > 0)
+	while (width > minus)
 	{
 		if (zero)
 			ft_putchar('0');

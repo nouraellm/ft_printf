@@ -6,7 +6,7 @@
 /*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/15 22:08:32 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/15 22:11:44 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 01:01:25 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ t_flags	ft_width_flag(va_list args, t_flags flags)
 	{
 		flags.minus = 1;
 		flags.width *= -1;
+		flags.zero = 0;
 	}
 	return (flags);
 }
