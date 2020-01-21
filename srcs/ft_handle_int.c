@@ -61,7 +61,7 @@ int			ft_handle_int(int i, t_flags flags)
 	}
 	if (i < 0 && (flags.dot >= 0 || flags.zero == 1) && num != -2147483648)
 	{
-		if (flags.dot == -1 && flags.zero == 1)
+		if (flags.dot <= -1 && flags.zero == 1)
 			ft_putsp("-", 1);
 		i *= -1;
 		flags.zero = 1;
