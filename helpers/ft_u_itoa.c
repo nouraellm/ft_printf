@@ -6,7 +6,7 @@
 /*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/20 06:10:48 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/20 00:37:54 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 08:24:39 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static int		ft_intlen(long n)
 {
-	size_t 	length;
+	size_t	length;
 	int		neg;
 
 	length = 0;

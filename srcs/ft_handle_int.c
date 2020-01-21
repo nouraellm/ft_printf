@@ -6,7 +6,7 @@
 /*   By: nel-alla <nel-alla@student.1337.ma>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 04:44:00 by nel-alla          #+#    #+#             */
-/*   Updated: 2020/01/21 04:52:30 by nel-alla         ###   ########.fr       */
+/*   Updated: 2020/01/21 08:19:53 by nel-alla         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static int	ft_input(char *str, int num, t_flags flags)
 	int count;
 
 	count = 0;
-	if (flags.dot >= 0 && num < 0)
+	if (flags.dot >= 0 && num < 0 && num != -2147483648)
 		ft_putchar('-');
 	if (flags.dot >= 0)
 		count += ft_handle_width(flags.dot - 1, ft_strlen(str) - 1, 1);
@@ -59,9 +59,9 @@ int			ft_handle_int(int i, t_flags flags)
 		count += ft_handle_width(flags.width, 0, 0);
 		return (count);
 	}
-	if (i < 0 && (flags.dot >= 0 || flags.zero >= 1))
+	if (i < 0 && (flags.dot >= 0 || flags.zero == 1) && num != -2147483648)
 	{
-		if (flags.dot <= -1 && flags.zero == 1)
+		if (flags.dot == -1 && flags.zero == 1)
 			ft_putsp("-", 1);
 		i *= -1;
 		flags.zero = 1;
